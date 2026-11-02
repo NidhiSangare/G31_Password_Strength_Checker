@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Password Strength Checker</h1>
+        <p>Check how strong your password is</p>
+
+        <label>Enter Password</label>
+
+        <div class="password-box">
+            <input type="password" id="password"
+                   placeholder="Enter your password">
+            <button type="button" onclick="togglePassword()">👁️</button>
+        </div>
+
+        <button onclick="checkPassword()">Check Strength</button>
+
+        <button type="button" class="reset-btn"
+                onclick="resetPassword()">Reset</button>
+
+
+        <!-- Password Requirements -->
+
+        <div class="requirements">
+            <h3>Requirements:</h3>
+            <ul type="disc">
+                <li id="length">✗ At least 8 characters</li>
+                <li id="uppercase">✗ Uppercase letter</li>
+                <li id="lowercase">✗ Lowercase letter</li>
+                <li id="number">✗ Number</li>
+                <li id="special">✗ Special character</li>
+            </ul>
+        </div>
+
+        <h3 id="result"></h3>
+        <div id="suggestions"></div>
+
+
+        <!-- Strong Password Generator -->
+
+       <button type="button" class="generator-toggle-btn" onclick="toggleGenerator()">
+                   Strong Password Generator
+      </button>
+
+         <div class="generator" id="generatorPanel" style="display: none;">
+
+
+            <h2>Strong Password Generator</h2>
+
+            <p>Generate a strong and secure password automatically.</p>
+
+            <label for="passwordLength">Password Length:</label>
+
+            <div class="length-value">
+                <span id="lengthValue">12</span> Characters
+            </div>
+
+            <input type="range" id="passwordLength"
+                   min="8" max="16" value="12"
+                   oninput="updateLength()">
+
+            <input type="text" id="generatedPassword"
+                   placeholder="Generated password will appear here"
+                   readonly>
+
+            <div class="generator-buttons">
+
+                <button type="button"
+                        onclick="generatePassword()">
+                    Generate Password
+                </button>
+
+                <button type="button" class="copy-btn"
+                        onclick="copyPassword()">
+                    Copy Password
+                </button>
+
+            </div>
+        </div>
+
+
+        <!-- Password Security Guide -->
+
+        <details class="security-guide">
+
+            <summary>
+
+                <span class="guide-icon">✦</span>
+                <span class="guide-title">
+                    <strong>Password Security Guide</strong>
+                    <small>Learn how to protect your passwords</small>
+                </span>
+
+                <span class="guide-arrow">⌄</span>
+
+            </summary>
+
+            <div class="guide-content">
+
+                <div class="guide-card">
+                    <h3>01. Use Long Passwords</h3>
+                    <p>Choose at least 12 characters for better security.</p>
+                </div>
+
+                <div class="guide-card">
+                    <h3>02. Mix Characters</h3>
+                    <p>Combine uppercase, lowercase, numbers and symbols.</p>
+                </div>
+
+                <div class="guide-card">
+                    <h3>03. Avoid Personal Details</h3>
+                    <p>Never use your name, birthday or personal information.</p>
+                </div>
+
+                <div class="guide-card">
+                    <h3>04. Use Unique Passwords</h3>
+                    <p>Create a different password for every account.</p>
+                </div>
+
+                <div class="security-reminder">
+                    <h3>Security Reminder</h3>
+                    <p>Never share your password with anyone.</p>
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- Privacy Message -->
+
+        <p class="privacy-message">
+            🔒 Your password is not saved or stored anywhere.
+        </p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
