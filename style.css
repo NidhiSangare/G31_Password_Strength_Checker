@@ -1,0 +1,416 @@
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        to bottom,
+        #FFD1DC 0%,
+        #FFD1DC 50%,
+        #831843 50%,
+        #831843 100%
+    );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    color: #000000;
+}
+
+.container {
+    background: transparent;
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px;
+    box-sizing: border-box;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #831843;
+}
+
+p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.password-box {
+    position: relative;
+    width: 100%;
+}
+
+.password-box input {
+    width: 100%;
+    padding-right: 50px;
+}
+
+.password-box button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 40px;
+    padding: 8px;
+    background: transparent;
+    color: #BE185D;
+    font-size: 18px;
+}
+
+.password-box button:hover {
+    background: transparent;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #9333EA;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #6D28D9;
+}
+
+#result {
+    margin-top: 25px;
+    line-height: 2;
+}
+
+#suggestions {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.requirements {
+    text-align: left;
+    margin: 20px 0;
+    padding: 10px;
+    background: #FFF1F7;
+    border-radius: 8px;
+}
+
+.requirements h3 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.requirements ul {
+    padding-left: 25px;
+    margin: 0;
+}
+
+.requirements li {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.requirements li.valid {
+    color: green;
+}
+
+.requirements li.invalid {
+    color: red;
+}
+
+.reset-btn {
+    margin-top: 10px;
+    background: #9333EA;
+    color: white;
+}
+
+.reset-btn:hover {
+    background: #6D28D9;
+}
+
+.privacy-message {
+    margin-top: 20px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Strong Password Generator */
+
+.generator {
+    margin-top: 25px;
+    padding: 15px;
+    background: #FFF1F7;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.generator h2 {
+    color: #831843;
+    text-align: center;
+    font-size: 20px;
+}
+
+.generator p {
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.length-value {
+    text-align: center;
+    color: #831843;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.generator input[type="range"] {
+    padding: 0;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.generator input[type="text"] {
+    margin-bottom: 10px;
+    background: white;
+}
+
+.generator-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.generator-buttons button {
+    font-size: 13px;
+    padding: 10px 5px;
+}
+
+.copy-btn {
+    background: #831843;
+    color: white;
+}
+
+.copy-btn:hover {
+    background: #6D1238;
+}
+
+/* Password Security Guide */
+
+.security-guide {
+    margin-top: 25px;
+    background: #FCE7F3;
+    border: 2px solid #BE185D;
+    border-radius: 12px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.security-guide summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.security-guide summary::-webkit-details-marker {
+    display: none;
+}
+
+.guide-icon {
+    background: #BE185D;
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.guide-title {
+    flex: 1;
+}
+
+.guide-title strong {
+    display: block;
+    color: #831843;
+    font-size: 15px;
+}
+
+.guide-title small {
+    display: block;
+    color: #666;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.guide-arrow {
+    color: #831843;
+    font-size: 24px;
+    transition: transform 0.3s;
+}
+
+.security-guide[open] .guide-arrow {
+    transform: rotate(180deg);
+}
+
+.guide-content {
+    padding: 0 14px 14px;
+}
+
+.guide-card {
+    background: white;
+    padding: 12px;
+    border-radius: 9px;
+    margin-top: 10px;
+    border: 1px solid #F3C5D9;
+}
+
+.guide-card h3 {
+    color: #831843;
+    font-size: 14px;
+    margin: 0 0 6px;
+}
+
+.guide-card p {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.security-reminder {
+    margin-top: 12px;
+    padding: 12px;
+    background: #831843;
+    color: white;
+    border-radius: 9px;
+}
+
+.security-reminder h3 {
+    font-size: 14px;
+    margin: 0 0 6px;
+}
+
+.security-reminder p {
+    color: white;
+    font-size: 12px;
+    margin: 0;
+}
+/* Copy Password Button */
+.generator-buttons .copy-btn {
+    background-color: #BE185D !important;
+    color: white !important;
+}
+
+.generator-buttons .copy-btn:hover {
+    background-color: #831843 !important;
+}
+
+/* Security Guide */
+.security-guide {
+    background-color: #FCE7F3 !important;
+    border: 2px solid #BE185D !important;
+}
+
+.security-guide > summary {
+    background-color: #FBCFE8 !important;
+}
+
+.security-guide .guide-icon {
+    background-color: #831843 !important;
+    color: white !important;
+}
+
+.security-guide .guide-title strong,
+.security-guide .guide-arrow {
+    color: #831843 !important;
+}
+
+
+
+/* Password Security Guide - New Colour Combination */
+
+.security-guide {
+    background: #FFF0E6 !important;
+    border: 2px solid #9D174D !important;
+}
+
+/* Guide Heading */
+.security-guide > summary {
+    background: #F4A6B8 !important;
+}
+
+.security-guide .guide-title strong,
+.security-guide .guide-arrow {
+    color: #9D174D !important;
+}
+
+/* Guide Icon */
+.security-guide .guide-icon {
+    background: #9D174D !important;
+    color: white !important;
+}
+
+/* Security Tips Cards */
+.security-guide .guide-card {
+    background: #FFFFFF !important;
+    border: 1px solid #F4A6B8 !important;
+}
+
+/* Security Reminder */
+.security-guide .security-reminder {
+    background: #9D174D !important;
+    color: white !important;
+}
+
+.security-guide .security-reminder h3,
+.security-guide .security-reminder p {
+    color: white !important;
+}
+
+.security-guide {
+    background: #EDE7F6 !important;
+    border: 2px solid #9D174D !important;
+}
+
+.security-guide > summary {
+    background: #DCCEF2 !important;
+}
+
+/* Security Reminder New Colour */
+
+.security-guide .security-reminder {
+    background: #76538F !important;
+    color: white !important;
+}
+
+.security-guide .security-reminder h3,
+.security-guide .security-reminder p {
+    color: white !important;
+}
